@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Homework</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100;400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<link rel="stylesheet" href="styles.css"> 
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script> 
+</head>
+<body>
+  <div class="container">
+      <nav class="navbar navbar-expand-lg" style="background-color: #DFEAF8">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Weather App</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a id="current-location" class="nav-link active" aria-current="page" href="#">Current 📍</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">New York</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Dallas</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Other Cities
+                </a>
+              </ul>
+              <form class="d-flex" role="search" id="city-search">
+                <input class="form-control me-2" type="search" placeholder="Enter a city..." aria-label="Search" id="search-city" autocomplete="off">
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+        <div class="container px-4 text-center">
+          <div class="row gx-5">
+            <div class="col">
+              <h1>Todays Forcast</h1>
+              <h2 id="city">Phoenix, Az</h2>
+              <h5 id="todays-date">Date/Time</h5>
+              <h2> ☀️ <span id="main-temp">70</span
+                ><span class="units">
+                  <a href="#" class="disable-link" id="fahrenheit-link">°F</a> |
+                  <a href="#" id="celsius-link">°C</a>
+                  <p id="description">Sunny</p>
+                </span>
+              </h2>
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col">Precipitation: 0%</div>
+                  <div class="col">
+                    Humidity: 36%
+                  </div>
+                  <div class="col">
+                    Wind: 4 mph
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col next-days">
+              <div class="p-3 border style="background-color: #DFEAF8"><div class="vstack gap-3">
+                <div class="heading">Next 5 days</div>
+                <div class="bg-light border">Mon ☀️ 63°/39°</div>
+                <div class="bg-light border">Tue 🌤️ 64°/39°</div>
+                <div class="bg-light border">Wed ☀ 64°/39°</div>
+                <div class="bg-light border">Thur 🌤️ 65°/41°</div>
+                <div class="bg-light border">Fri 🌤️ 66°/41°</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <video autoplay muted loop id="background-video">
+      <source src="images/cover-cloud.mp4" type="video/mp4">
+      </video>
+  <script src="script.js">
+	</script>
+</body>
+</html>
