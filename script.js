@@ -1,8 +1,15 @@
 /// current date and time
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
-function dateTime() {
-  let now = new Date();
-  let day = now.getDay();
   let days = [
     "Sunday",
     "Monday",
@@ -12,36 +19,9 @@ function dateTime() {
     "Friday",
     "Saturday",
   ];
-  let dayMonth = now.getDate();
-  let month = now.getMonth();
-  let months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  let hour = now.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-
-  let minutes = now.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  let today = `${days[day]}, ${dayMonth}. ${months[month]}  ${hour}:${minutes}`;
-  let currentDate = document.querySelector("#todays-date");
-  currentDate.innerHTML = today;
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
 }
-dateTime();
 
 /// Name of the city -> search
 
@@ -64,7 +44,6 @@ let city = document.querySelector("#city-search");
 city.addEventListener("submit", cityName);
 
 /// current geo - lat and lon
-
 function currentLocation(position) {
   let apiKey = "369496079cb0740e8e8eb63feb92a9f7";
   let lat = position.coords.latitude;
@@ -91,17 +70,18 @@ function weatherLocation(response) {
 
 /// Display - city
 function showWeather(response) {
-  let currentgeoTemp = document.querySelector("#main-temp");
-  let temperature = Math.round(response.data.main.temp);
-  currentgeoTemp.innerHTML = temperature;
-  let currentGeoLocation = document.querySelector("#city");
-  currentGeoLocation.innerHTML = response.data.name;
+  let tempElement = document.querySelector("#main-temp");
+  tempElement.innerHTML = Math.round(response.data.main.temp);
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = response.data.name;
   let description = document.querySelector("#decription");
   description.innerHTML = response.data.weather[0].description;
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
   let wind = document.querySelector("#wind");
-  let wind = Math.round(response.data.wind.speed);
+  wind.innerHTML = Math.round(response.data.wind.speed);
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 /// Celsius to Farenheit
