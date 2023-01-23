@@ -98,6 +98,10 @@ function showWeather(response) {
   currentGeoLocation.innerHTML = response.data.name;
   let description = document.querySelector("#decription");
   description.innerHTML = response.data.weather[0].description;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = response.data.main.humidity;
+  let wind = document.querySelector("#wind");
+  let wind = Math.round(response.data.wind.speed);
 }
 
 /// Celsius to Farenheit
