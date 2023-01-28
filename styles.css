@@ -29,12 +29,19 @@ padding-left: 230px;}
 #description {
   padding-right: 220px;
 }
-.next-days {
-  font-size: 30px;
-  padding: 10px;
-  margin-top: 10px;
-  word-spacing: 30px;
-  margin-right: 15px;
+.weather-forecast {
+  color: black;
+  text-align: center;
+}
+.weather-forecast-date {
+  opacity: 0.5;
+  font-size: 15px;
+}
+.weather-forecast-temperatures {
+  font-size: 10px;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.4;
 }
 .heading {
   border: none;
