@@ -17,7 +17,8 @@ h2 {
   margin-top: 50px;
 }
 p {
-padding-left: 230px;}
+  padding-left: 230px;
+}
 
 .units {
   font-size: 20px;
@@ -28,17 +29,17 @@ padding-left: 230px;}
 }
 #description {
   padding-right: 220px;
+  font-size: 30px;
 }
 .weather-forecast {
   color: black;
   text-align: center;
 }
 .weather-forecast-date {
-  opacity: 0.5;
-  font-size: 15px;
+  font-size: 25px;
 }
 .weather-forecast-temperatures {
-  font-size: 10px;
+  font-size: 15px;
 }
 .weather-forecast-temperature-min {
   opacity: 0.4;
